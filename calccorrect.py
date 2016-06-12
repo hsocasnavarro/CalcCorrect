@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
 
 def message(correct=True):
     import curses
@@ -28,16 +29,16 @@ def message(correct=True):
     shorizontaldown=u'\u2517'+u'\u2501'*(maxlen)+u'\u251B'
 
 
-    print("\033["+sy0+";"+sx0+"H"+shorizontalup)
+    print("\033["+sy0+";"+sx0+"H"+shorizontalup).encode('utf-8')
     sy0=str(y0+1)
-    print("\033["+sy0+";"+sx0+"H"+sline1)
+    print("\033["+sy0+";"+sx0+"H"+sline1).encode('utf-8')
     sy0=str(y0+2)
-    print("\033["+sy0+";"+sx0+"H"+sline2)
+    print("\033["+sy0+";"+sx0+"H"+sline2).encode('utf-8')
     sy0=str(y0+3)
-    print("\033["+sy0+";"+sx0+"H"+shorizontaldown)
+    print("\033["+sy0+";"+sx0+"H"+shorizontaldown).encode('utf-8')
 
     # Position cursor
-    sy0=str(y0+3)
-    sx0=str(x0+len2)
-    print("\033["+sy0+";"+sx0+"H")
+    sy0=str(maxy-1)
+    sx0=str(1)
+    print("\033["+sy0+";"+sx0+"H").encode('utf-8')
 
